@@ -56,35 +56,34 @@ function tocarMusica(humor) {
     indiceAtual[humor] = (index + 1) % lista.length;
 
     let popup = null;
-    try {
-        popup = window.open("", "playerPopup", "width=420,height=280");
-    } catch (e) {
-        popup = null;
-    }
+try {
+    popup = window.open("", "playerPopup"); // ⬅ TELA CHEIA NO SAFARI
+} catch (e) {
+    popup = null;
+}
 
-    if (!popup) {
-        window.open(url, "_blank");
-        return;
-    }
+if (!popup) {
+    window.open(url, "_blank");
+    return;
+}
 
-    popup.document.open();
- // substitua sua chamada popup.document.write(`...`) por ESTE bloco abaixo:
+popup.document.open();
+
 popup.document.write(`
 <!doctype html>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Carregando...</title>
+
 <style>
-  /* reset e box sizing */
   *, *::before, *::after { box-sizing: border-box; }
 
   html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
-    -webkit-text-size-adjust: 100%;
+    height: 100%;
   }
 
   body {
@@ -92,85 +91,64 @@ popup.document.write(`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f3faff 0%, #eef7ff 50%, #f8fcff 100%);
-    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    padding: 24px;
+    background: linear-gradient(135deg, #f3faff, #eef7ff, #f8fcff);
+    font-family: "Poppins", sans-serif;
     color: #77a4c7;
     text-align: center;
-    padding: 24px;
-    -webkit-font-smoothing: antialiased;
-    backdrop-filter: blur(10px);
   }
 
   .card {
-    width: min(92%, 420px);        /* responsivo: ocupa até 92% da viewport ou 420px */
-    max-width: 420px;
+    width: min(92%, 460px);
     background: rgba(255,255,255,0.36);
-    padding: 30px 32px;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(120,150,180,0.12);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    padding: 36px 32px;
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255,255,255,0.35);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    animation: pop 220ms cubic-bezier(.2,.9,.3,1);
+    box-shadow: 0 12px 30px rgba(120,150,180,0.15);
+    animation: pop .25s ease;
   }
 
   @keyframes pop {
-    from { transform: translateY(-6px) scale(.98); opacity: 0; }
-    to { transform: translateY(0) scale(1); opacity: 1; }
+    from { opacity: 0; transform: scale(.96); }
+    to { opacity: 1; transform: scale(1); }
   }
 
   .loader {
-    width: 64px;
-    height: 64px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    border: 5px solid rgba(170,200,230,0.38);
+    border: 6px solid rgba(170,200,230,0.35);
     border-top-color: #6d93b5;
     animation: spin 1.05s linear infinite;
-    box-shadow: 0 4px 14px rgba(100,140,180,0.06) inset;
+    margin-bottom: 16px;
   }
-  @keyframes spin { to { transform: rotate(360deg) } }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   h2 {
-    margin: 4px 0;
-    font-size: 20px;
+    margin: 6px 0;
+    font-size: 22px;
     font-weight: 600;
     color: #6d93b5;
   }
 
   .frase {
-    font-size: 14px;
+    font-size: 15px;
     color: #7ea9c8;
     line-height: 1.45;
-    max-width: 320px;
-    margin-top: 6px;
-  }
-
-  /* pequenas adaptações para telas maiores */
-  @media (min-width: 600px) {
-    .card { padding: 36px; }
-    .loader { width: 72px; height: 72px; border-width: 6px; }
-    h2 { font-size: 22px; }
-    .frase { font-size: 15px; }
+    max-width: 340px;
+    margin-top: 8px;
   }
 </style>
 </head>
+
 <body>
-  <div class="card" role="status" aria-live="polite">
-    <div class="loader" aria-hidden="true"></div>
-    <h2>Preparando sua música...</h2>
+  <div class="card">
+    <div class="loader"></div>
+    <h2>Preparando sua música....</h2>
     <div class="frase">${frase}</div>
   </div>
-
-  <script>
-    // foco e acessibilidade
-    try { window.focus(); } catch(e) {}
-    // opcional: fechar automaticamente após X segundos (se quiser)
-    // setTimeout(()=> window.close(), 15000);
-  </script>
 </body>
 </html>
 `);
