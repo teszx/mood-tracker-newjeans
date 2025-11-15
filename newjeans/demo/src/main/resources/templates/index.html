@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Mood Tracker - NewJeans
+        </title>
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    </head>
+    <body>
+
+        <img src="https://img1.picmix.com/output/stamp/normal/3/6/0/8/2568063_52b0a.png" alt="nj" class="logo">
+
+        <h1>Seu Humor de Hoje</h1>
+        <p>Como você está hoje, princesa?</p>
+
+        <form onsubmit="return false">
+            <button onclick="tocarMusica('feliz')" class="mood-btn" name="mood" value="feliz">Feliz </button>
+            <button onclick="tocarMusica('triste')" class="mood-btn" name="mood" value="triste">Triste </button>
+            <button onclick="tocarMusica('cansada')" class="mood-btn" name="mood" value="cansada">Cansada </button>
+            <button onclick="tocarMusica('estressada')" class="mood-btn" name="mood" value="estressada">Estressada </button>
+            <button onclick="tocarMusica('saudade')" class="mood-btn" name="mood" value="saudade">Com saudade </button>
+        </form>   
+        <div class="footer-gif"></div>       
+        <script src="script.js"></script>
+    </body>
+</html>
