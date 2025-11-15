@@ -182,17 +182,16 @@ p {
 }
 
 
+
 .footer-gif {
- 
-    width: 170px;
-    max-width: 65%;
-    display: block;
-    margin: 20px auto 0;
-    height: 330px;
+    width: 140px;          
+    height: 140px;         
+    margin: 30px auto;     
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; 
     animation: float 3s ease-in-out infinite;
+
 }
 
 
