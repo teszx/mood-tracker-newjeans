@@ -125,9 +125,6 @@ p.subtitle{
     padding-top: 40px;
 }
 
-@media screen and (max-width: 430px) {
-
-body {
     @media screen and (max-width: 430px) {
     body {
         margin: 0;
