@@ -32,15 +32,27 @@ body::after{
     z-index: -1;
 }
 
-.logo{
-    width: 180px;
-    animation: fadeIn 1.3s ease;
-    filter:drop-shadow(0 0 6px #bcd7ff);
-    height: auto;
-    display:block;
-    margin: 20px auto 10px;
-    
+.logo {
+    position: relative;
+    width: 190px;
+    z-index: 2;
 }
+
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(180,210,255,0.35),
+        rgba(255,255,255,0) 70%
+    );
+    z-index: -1;
+    filter: blur(12px);
+}
+    
+
 
 @keyframes fadeIn{
     from {
