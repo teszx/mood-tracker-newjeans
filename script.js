@@ -90,23 +90,27 @@ function tocarMusica(humor) {
         color: #77a4c7;
         text-align: center;
 
-
         backdrop-filter: blur(14px);
     }
 
-    
     .card {
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items:center;
+
+        /* AQUI É O TAMANHO NOVO */
+        width: 80%;
+        max-width: 380px;
+        padding: 35px 40px;
+
         background: rgba(255, 255, 255, 0.35);
-        padding: 25px 35px;
         border-radius: 22px;
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         border: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow: 0 8px 25px rgba(140, 180, 210, 0.18);
+
         animation: pop 0.4s ease;
     }
 
@@ -123,21 +127,20 @@ function tocarMusica(humor) {
     }
 
     .frase {
-        font-size: 14px;
-        margin-top: 5px;
+        font-size: 15px;
+        margin-top: 8px;
         color: #89b3d0;
-        line-height: 1.4;
-        max-width: 240px;
+        line-height: 1.45;
+        max-width: 260px;
     }
 
-    
     .loader {
         margin: 18px 0 12px;
-        width: 55px;
-        height: 55px;
+        width: 60px;
+        height: 60px;
         display: block;
         border-radius: 50%;
-        border: 4px solid rgba(170, 200, 230, 0.4);
+        border: 5px solid rgba(170, 200, 230, 0.35);
         border-top-color: #6d93b5;
         animation: spin 1.1s linear infinite;
     }
@@ -147,7 +150,6 @@ function tocarMusica(humor) {
         100% { transform: rotate(360deg); }
     }
 
-    
     .sparkle {
         font-size: 12px;
         color: #a8c9e2;
@@ -159,9 +161,7 @@ function tocarMusica(humor) {
         0% { opacity: 0.45; }
         50% { opacity: 1; }
         100% { opacity: 0.45;}
-
     }
-
     </style>
     </head>
 
