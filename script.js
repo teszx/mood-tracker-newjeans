@@ -87,50 +87,107 @@ popup.document.write(`
   }
 
   body {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: linear-gradient(135deg, #f3faff, #eef7ff, #f8fcff);
+
+    background: linear-gradient(135deg, #eaf4ff, #f5f9ff, #eef6ff);
     font-family: "Poppins", sans-serif;
     color: #77a4c7;
     text-align: center;
+    overflow: hidden;
   }
+
+ 
+  .bunny {
+    position: absolute;
+    opacity: 0.22;
+    animation: bunfloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px #dce8ff);
+  }
+
+  
+  .b1 { top: 12%; left: 10%; transform: scale(1.0); }
+  .b2 { top: 40%; right: 12%; transform: scale(0.8); animation-delay: .8s; }
+  .b3 { bottom: 10%; left: 44%; transform: scale(1.1); animation-delay: 1.5s; }
+
+ 
+  .bunny::before, .bunny::after {
+    content: "";
+    position: absolute;
+    background: #cfe3ff;
+    border-radius: 50%;
+  }
+
+  
+  .bunny {
+    width: 60px;
+    height: 45px;
+    background: #dbeaff;
+    border-radius: 50%;
+  }
+
+ 
+  .bunny::before {
+    width: 18px;
+    height: 32px;
+    left: 8px;
+    top: -20px;
+  }
+
+  .bunny::after {
+    width: 18px;
+    height: 32px;
+    right: 8px;
+    top: -20px;
+  }
+
+  @keyframes bunfloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+    100% { transform: translateY(0); }
+  }
+
 
   .card {
     width: min(92%, 460px);
-    background: rgba(255,255,255,0.36);
+    background: rgba(255, 255, 255, 0.35);
     border-radius: 22px;
     padding: 36px 32px;
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.35);
-    box-shadow: 0 12px 30px rgba(120,150,180,0.15);
+    border: 1px solid rgba(255,255,255,0.45);
+    box-shadow: 0 12px 30px rgba(140,160,180,0.18);
     animation: pop .25s ease;
+    position: relative;
+    z-index: 2;
   }
 
   @keyframes pop {
-    from { opacity: 0; transform: scale(.96); }
+    from { opacity: 0; transform: scale(.94); }
     to { opacity: 1; transform: scale(1); }
   }
 
+  
   .loader {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 6px solid rgba(170,200,230,0.35);
+    border: 6px solid rgba(140,170,210,0.35);
     border-top-color: #6d93b5;
-    animation: spin 1.05s linear infinite;
-    margin-bottom: 16px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 18px;
   }
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
   h2 {
-    margin: 6px 0;
+    margin: 8px 0 6px;
     font-size: 22px;
     font-weight: 600;
-    color: #6d93b5;
+    color: #6d8fc7;
   }
 
   .frase {
@@ -138,15 +195,21 @@ popup.document.write(`
     color: #7ea9c8;
     line-height: 1.45;
     max-width: 340px;
-    margin-top: 8px;
+    margin: 8px auto 0;
   }
 </style>
 </head>
 
 <body>
+
+  <div class="bunny b1"></div>
+  <div class="bunny b2"></div>
+  <div class="bunny b3"></div>
+
+
   <div class="card">
     <div class="loader"></div>
-    <h2>Preparando sua música....</h2>
+    <h2>Preparando sua música...</h2>
     <div class="frase">${frase}</div>
   </div>
 </body>
