@@ -33,6 +33,8 @@ body::after{
 }
 
 .logo {
+    margin-top: 10px;
+    margin-bottom: 5px;
     position: relative;
     width: 190px;
     z-index: 2;
@@ -164,7 +166,8 @@ h1 {
         0 0 8px rgba(170, 200, 255, 0.6),
         0 0 2px rgba(255,255,255,0.9);
 
-    margin-top: 25px;
+    margin-top: 8px;
+    margin-bottom:5px;
 
     background: linear-gradient(120deg, #6da7ff, #3a63ff);
     -webkit-background-clip: text;
@@ -182,7 +185,8 @@ p.subtitle {
 
     text-shadow: 0 0 4px rgba(180, 200, 255, 0.4);
 
-    margin-top: -6px;
+    margin-top: -2px;
+    margin-bottom: 15px;
     letter-spacing: 0.3px;
 }
 
