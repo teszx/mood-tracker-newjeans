@@ -203,11 +203,9 @@ p.subtitle {
         margin: 0;
         padding: 0 !important;
         min-height: 100dvh;
-        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
         background: linear-gradient(to bottom, #c9f0ff, #ffffff);
         font-family: Arial, sans-serif;
         overflow-x: hidden;
@@ -219,30 +217,28 @@ p.subtitle {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        padding-top: 0 !important;
-        margin-top: -5px !important;   
+        margin-top: -15px !important;   /* COLA TUDO NO TOPO */
     }
 
     .logo {
         width: 200px;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important; 
+        margin: 0 !important;            /* ZERO DE ESPAÇO */
         filter: drop-shadow(0 0 6px #bcd7ff);
+        transform: translateY(-5px);     /* ENCOSTA MAIS NO TOPO */
     }
 
     h1 {
         font-size: 28px;
         color: #5a66e8;
-        margin-top: 4px !important;     
-        margin-bottom: 2px !important;
+        margin: -2px 0 0 0 !important;   /* COLA NA LOGO */
+        padding: 0;
     }
 
     p.subtitle {
         font-size: 17px;
         opacity: .75;
-        margin-top: -2px !important;    
-        margin-bottom: 18px;
+        margin: -2px 0 10px 0 !important; /* COLA NO H1 */
+        padding: 0;
         text-align: center;
     }
 
@@ -253,19 +249,17 @@ p.subtitle {
         border-radius: 40px;
         border: none;
         font-size: 18px;
-        margin-top: 12px;
+        margin: 8px 0 0 0;               /* COLA NOS TEXTOS */
         box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
     .footer-gif {
         width: 140px;
         height: 140px;
-        margin: 30px auto;
+        margin: 25px auto 0 auto;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         animation: float 3s ease-in-out infinite;
     }
 }
-
-
