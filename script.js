@@ -55,18 +55,25 @@ function tocarMusica(humor) {
 
     indiceAtual[humor] = (index + 1) % lista.length;
 
-    let popup = null;
+    if (popupGlobal && !popupGlobal.closed) {
+    try { popupGlobal.close(); } catch(e) {}
+}
+
+
+let popup = null;
+
 try {
-    popup = window.open("", "playerPopup"); // ⬅ TELA CHEIA NO SAFARI
+    popup = window.open("", "playerPopup");
 } catch (e) {
     popup = null;
 }
+
+popupGlobal = popup;
 
 if (!popup) {
     window.open(url, "_blank");
     return;
 }
-
 popup.document.open();
 
 popup.document.write(`
