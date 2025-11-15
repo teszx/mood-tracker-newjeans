@@ -201,46 +201,49 @@ p.subtitle {
 
     body {
         margin: 0;
-        padding-top: 0 !important;
-        padding-bottom: 0;
+        padding: 0 !important;
         min-height: 100dvh;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         background: linear-gradient(to bottom, #c9f0ff, #ffffff);
         font-family: Arial, sans-serif;
+        overflow-x: hidden;
     }
 
     .container {
-        padding-top: 0 !important;
-        margin-top: -10px !important;
         width: 100%;
         max-width: 420px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        padding-top: 0 !important;
+        margin-top: -5px !important;   
     }
 
     .logo {
         width: 200px;
         margin-top: 0 !important;
-        margin-bottom: 5px !important;
+        margin-bottom: 0 !important; 
         filter: drop-shadow(0 0 6px #bcd7ff);
     }
 
     h1 {
         font-size: 28px;
         color: #5a66e8;
-        margin-top: 0 !important;
-        margin-bottom: 2px;
+        margin-top: 4px !important;     
+        margin-bottom: 2px !important;
     }
 
     p.subtitle {
         font-size: 17px;
         opacity: .75;
-        margin-top: -4px !important;
-        margin-bottom: 20px;
+        margin-top: -2px !important;    
+        margin-bottom: 18px;
+        text-align: center;
     }
 
     .btn-mood {
@@ -263,5 +266,6 @@ p.subtitle {
         background-size: contain;
         animation: float 3s ease-in-out infinite;
     }
-
 }
+
+
