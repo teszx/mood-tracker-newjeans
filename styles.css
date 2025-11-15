@@ -183,9 +183,12 @@ p {
 
 
 .footer-gif {
-    width: 260px;
+ 
+    width: 170px;
+    max-width: 65%;
+    display: block;
+    margin: 20px auto 0;
     height: 330px;
-    margin-top: 40px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
