@@ -140,19 +140,38 @@ body::after{
     color: #1d3f7a;
 }
 
-h1{
-    
-    font-size: 26px;
+h1 {
+    font-size: 32px;
     font-weight: 700;
     color: #3a63ff;
-    margin-top: 20px;
+
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 0 8px rgba(170, 200, 255, 0.6),
+        0 0 2px rgba(255,255,255,0.9);
+
+    margin-top: 25px;
+
+    background: linear-gradient(120deg, #6da7ff, #3a63ff);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-p.subtitle{
-    font-size: 16px;
+p.subtitle {
+    font-size: 17px;
     font-weight: 300;
-    color: #5e7aff;
-    margin-top:-8px;
+
+    text-align: center;
+
+    color: #6d8cff;
+    opacity: 0.9;
+
+    text-shadow: 0 0 4px rgba(180, 200, 255, 0.4);
+
+    margin-top: -6px;
+    letter-spacing: 0.3px;
 }
 
 .container{
