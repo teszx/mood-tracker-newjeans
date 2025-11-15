@@ -199,67 +199,145 @@ p.subtitle {
 
 @media screen and (max-width: 430px) {
 
+   
     body {
         margin: 0;
-        padding: 0 !important;
+        padding: 0;
         min-height: 100dvh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: linear-gradient(to bottom, #c9f0ff, #ffffff);
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
+        justify-content: flex-start;
+
+       
+        background: linear-gradient(
+            180deg,
+            #d8ecff 0%,
+            #e9f7ff 25%,
+            #ffffff 100%
+        );
+
+      
+        box-shadow: inset 0 40px 100px rgba(150, 190, 255, 0.45);
+
+     
+        background-image:
+            radial-gradient(rgba(255,255,255,0.7) 1px, transparent 1px),
+            url('https://i.imgur.com/rFuP7gU.png');
+        background-size: 120px 120px, cover;
+        background-attachment: fixed;
+
+        font-family: "Poppins", Arial, sans-serif;
     }
 
+  
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: url("https://i.imgur.com/zYHk7n8.png");
+        background-repeat: repeat;
+        background-size: 140px;
+        opacity: 0.35;
+        animation: sparkles 6s linear infinite;
+    }
+
+    @keyframes sparkles {
+        0% { transform: translateY(0); opacity: .35; }
+        50% { opacity: .45; }
+        100% { transform: translateY(-8px); opacity: .35; }
+    }
+
+   
     .container {
+        padding-top: 0;
+        margin-top: -10px;
         width: 100%;
         max-width: 420px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: -15px !important;   /* COLA TUDO NO TOPO */
     }
 
+   
     .logo {
         width: 200px;
-        margin: 0 !important;            /* ZERO DE ESPAÇO */
-        filter: drop-shadow(0 0 6px #bcd7ff);
-        transform: translateY(-5px);     /* ENCOSTA MAIS NO TOPO */
+        margin-top: 6px;
+        margin-bottom: 4px;
+
+        filter: drop-shadow(0 0 8px #cfe2ff)
+                drop-shadow(0 0 16px #e7f2ff);
+
+        animation: fadeLogo .8s ease-out;
     }
 
+    @keyframes fadeLogo {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    
     h1 {
         font-size: 28px;
-        color: #5a66e8;
-        margin: -2px 0 0 0 !important;   /* COLA NA LOGO */
-        padding: 0;
+        font-weight: 700;
+        color: #5a7dff;
+        margin-top: 2px;
+        margin-bottom: 0;
+        letter-spacing: 0.6px;
+
+        text-shadow:
+            0 0 4px #cddcff,
+            0 0 9px rgba(160, 190, 255, 0.4);
     }
 
+   
     p.subtitle {
         font-size: 17px;
-        opacity: .75;
-        margin: -2px 0 10px 0 !important; /* COLA NO H1 */
-        padding: 0;
-        text-align: center;
+        font-weight: 300;
+        opacity: 0.85;
+        color: #6d8aff;
+        margin-top: -2px;
+        margin-bottom: 16px;
     }
 
+    
     .btn-mood {
         width: 260px;
         height: 55px;
-        background: #eaeaea;
+        background: rgba(255,255,255,0.55);
+        backdrop-filter: blur(10px);
         border-radius: 40px;
-        border: none;
+        border: 1.5px solid #bcd9ff;
         font-size: 18px;
-        margin: 8px 0 0 0;               /* COLA NOS TEXTOS */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        margin-top: 12px;
+
+        box-shadow: 0 4px 14px rgba(140,170,255,0.25);
+        transition: .25s;
     }
 
+    .btn-mood:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(120,150,255,0.35);
+    }
+
+    
     .footer-gif {
         width: 140px;
         height: 140px;
-        margin: 25px auto 0 auto;
+        margin: 28px auto 10px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+        100% { transform: translateY(0); }
     }
 }
