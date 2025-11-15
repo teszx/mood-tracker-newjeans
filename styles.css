@@ -199,8 +199,8 @@ p.subtitle {
 
     @media screen and (max-width: 430px) {
     body {
-        margin: 0;
-        padding: 0;
+        margin-bottom: 0;
+        padding-top: 0;
         min-height: 100dvh;
         height: auto;
         display: flex;
@@ -214,7 +214,8 @@ p.subtitle {
 
 
 .container {
-    margin-top: 40px;
+    padding-top: 10px;
+    margin-top:0;
     width: 100%;
     max-width: 420px;
     display: flex;
@@ -225,20 +226,21 @@ p.subtitle {
 
 .logo {
     width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top:5px;
 }
 
 
 h1 {
     font-size: 28px;
     color: #5a66e8;
-    margin: 10px 0 5px 0;
+    margin-top:5px;
 }
 
 p {
     font-size: 17px;
     opacity: .75;
-    margin-bottom: 20px;
+    margin-top:-2px;
 }
 
 
