@@ -68,114 +68,114 @@ function tocarMusica(humor) {
     }
 
     popup.document.open();
-    popup.document.write(`
-        <html>
+ // substitua sua chamada popup.document.write(`...`) por ESTE bloco abaixo:
+popup.document.write(`
+<!doctype html>
+<html lang="pt-br">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Carregando...</title>
-
 <style>
-    body {
-        margin: 0;
-        padding: 0;
+  /* reset e box sizing */
+  *, *::before, *::after { box-sizing: border-box; }
 
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+  }
 
-        background: linear-gradient(135deg, #f3faff, #eef7ff, #f8fcff);
-        font-family: "Poppins", sans-serif;
-        color: #77a4c7;
-        text-align: center;
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f3faff 0%, #eef7ff 50%, #f8fcff 100%);
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    color: #77a4c7;
+    text-align: center;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+    backdrop-filter: blur(10px);
+  }
 
-        backdrop-filter: blur(14px);
-    }
+  .card {
+    width: min(92%, 420px);        /* responsivo: ocupa até 92% da viewport ou 420px */
+    max-width: 420px;
+    background: rgba(255,255,255,0.36);
+    padding: 30px 32px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(120,150,180,0.12);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.35);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: pop 220ms cubic-bezier(.2,.9,.3,1);
+  }
 
-    .card {
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items:center;
+  @keyframes pop {
+    from { transform: translateY(-6px) scale(.98); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+  }
 
-        /* AQUI É O TAMANHO NOVO */
-        width: 80%;
-        max-width: 380px;
-        padding: 35px 40px;
+  .loader {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 5px solid rgba(170,200,230,0.38);
+    border-top-color: #6d93b5;
+    animation: spin 1.05s linear infinite;
+    box-shadow: 0 4px 14px rgba(100,140,180,0.06) inset;
+  }
+  @keyframes spin { to { transform: rotate(360deg) } }
 
-        background: rgba(255, 255, 255, 0.35);
-        border-radius: 22px;
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 25px rgba(140, 180, 210, 0.18);
+  h2 {
+    margin: 4px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #6d93b5;
+  }
 
-        animation: pop 0.4s ease;
-    }
+  .frase {
+    font-size: 14px;
+    color: #7ea9c8;
+    line-height: 1.45;
+    max-width: 320px;
+    margin-top: 6px;
+  }
 
-    @keyframes pop {
-        from { transform: scale(0.92); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
-    }
+  /* pequenas adaptações para telas maiores */
+  @media (min-width: 600px) {
+    .card { padding: 36px; }
+    .loader { width: 72px; height: 72px; border-width: 6px; }
+    h2 { font-size: 22px; }
+    .frase { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card" role="status" aria-live="polite">
+    <div class="loader" aria-hidden="true"></div>
+    <h2>Preparando sua música...</h2>
+    <div class="frase">${frase}</div>
+  </div>
 
-    h2 {
-        margin: 10px 0 2px;
-        font-size: 22px;
-        font-weight: 500;
-        color: #6d93b5;
-    }
+  <script>
+    // foco e acessibilidade
+    try { window.focus(); } catch(e) {}
+    // opcional: fechar automaticamente após X segundos (se quiser)
+    // setTimeout(()=> window.close(), 15000);
+  </script>
+</body>
+</html>
+`);
 
-    .frase {
-        font-size: 15px;
-        margin-top: 8px;
-        color: #89b3d0;
-        line-height: 1.45;
-        max-width: 260px;
-    }
-
-    .loader {
-        margin: 18px 0 12px;
-        width: 60px;
-        height: 60px;
-        display: block;
-        border-radius: 50%;
-        border: 5px solid rgba(170, 200, 230, 0.35);
-        border-top-color: #6d93b5;
-        animation: spin 1.1s linear infinite;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    .sparkle {
-        font-size: 12px;
-        color: #a8c9e2;
-        margin-top: 6px;
-        animation: fade 1.6s ease-in-out infinite;
-    }
-
-    @keyframes fade {
-        0% { opacity: 0.45; }
-        50% { opacity: 1; }
-        100% { opacity: 0.45;}
-    }
-    </style>
-    </head>
-
-    <body>
-        <div class="card">
-            <div class="loader"></div>
-            <h2> Preparando sua música....</h2>
-
-            <div class="frase">${frase}</div>
-
-            </body>
-            </html>
-    `);
-    popup.document.close();
+popup.document.close();
 
     setTimeout(() => {
         popup.location.href = url.includes("?") ? url + "&autoplay=1" : url + "?autoplay=1";
