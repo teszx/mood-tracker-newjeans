@@ -40,7 +40,7 @@ const frasesPorHumor = {
     triste: ["Tá tudo bem sentir assim. Eu tô aqui com você."],
     cansada: ["Você não falhou: só precisa descansar. Você é humana, meu amor."],
     estressada: ["Respira… você é maior que qualquer problema."],
-    saudade: ["Eu também sinto uma saudade imensa de você."]
+    saudade: ["Eu também sinto uma saudade imensa de você. Ps: Eu ainda te amo"]
 };
 
 function isIOS() {
@@ -55,14 +55,14 @@ function tocarMusica(humor) {
 
     indiceAtual[humor] = (index + 1) % lista.length;
 
-    // ======== FECHA POPUP ANTIGO ========
+    
     if (popupGlobal && !popupGlobal.closed) {
         try {
             popupGlobal.close();
         } catch (e) {}
     }
 
-    // ======== ABRE NOVO POPUP ========
+    
     let popup = null;
     try {
         popup = window.open("", "playerPopup");
@@ -181,4 +181,8 @@ function tocarMusica(humor) {
             ? url + "&autoplay=1"
             : url + "?autoplay=1";
     }, 700);
+
+    function Carta(){
+         window.location.href ='sdd.html';
+    }
 }
