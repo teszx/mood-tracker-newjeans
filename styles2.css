@@ -133,28 +133,32 @@ h1 {
         margin-top: 10px;
     }
 
-   .envelope {
+.envelope {
     position: relative;
     overflow: hidden;
     clip-path: inset(0 0 0 0);
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+    display: flex;               
+    justify-content: center;     
+    align-items: flex-end;       
 }
+
 
 
 .carta-texto {
     position: absolute;
-    top: 100%;                
-    left: 50%;                 
-    transform: translateX(-50%); 
-    width: 100%;               
-    height: auto;
-    padding: 10px;             
+    width: 90%;                 
+    max-width: 350px;           
+    bottom: -100%;              
+    transition: bottom .6s ease;
+    text-align: left;
     box-sizing: border-box;
-    transition: top .6s ease;
 }
 
 
 .envelope.open .carta-texto {
+    bottom: 10%;
     top: -10%;                
     left: 50%;
     transform: translateX(-50%);
