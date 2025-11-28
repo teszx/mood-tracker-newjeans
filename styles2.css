@@ -133,23 +133,26 @@ h1 {
         margin-top: 10px;
     }
 
-    .envelope {
-        width: 90vw;          
-        max-width: 380px;     
-        min-width: unset;
-        position: relative;
-    }
+   .envelope {
+    position: relative;
+    overflow: hidden; 
+    clip-path: inset(0 0 0 0); 
+    -webkit-mask-image: -webkit-radial-gradient(white, black); 
+}
+
 
     .env-body {
         height: 250px;       
     }
 
     .carta-texto {
-        height: 72%;          
-        top: 27%;             
-        left: 50%;
-        transform: translateX(-50%);
-    }
+    position: absolute;
+    top: 100%;      
+    left: 0;
+    width: 100%;
+    transition: top .6s ease;
+}
+
 
     .envelope.open .carta-texto {
         top: -10%;            
