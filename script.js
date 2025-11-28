@@ -1,4 +1,4 @@
-let popupGlobal = null;
+ let popupGlobal = null;
 const musicas = {
     feliz: [
         "https://youtu.be/2u_kncwzJ5Y?si=uY54rn7L0oxZRwuK",
@@ -181,8 +181,9 @@ function tocarMusica(humor) {
             ? url + "&autoplay=1"
             : url + "?autoplay=1";
     }, 700);
+    
+}
 
-    function Carta(){
+function Carta(){
          window.location.href ='sdd.html';
     }
-}
