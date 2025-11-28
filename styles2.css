@@ -135,36 +135,37 @@ h1 {
 
    .envelope {
     position: relative;
-    overflow: hidden; 
-    clip-path: inset(0 0 0 0); 
-    -webkit-mask-image: -webkit-radial-gradient(white, black); 
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 
-    .env-body {
-        height: 250px;       
-    }
-
-    .carta-texto {
+.carta-texto {
     position: absolute;
-    top: 100%;      
-    left: 0;
-    width: 100%;
+    top: 100%;                
+    left: 50%;                 
+    transform: translateX(-50%); 
+    width: 100%;               
+    height: auto;
+    padding: 10px;             
+    box-sizing: border-box;
     transition: top .6s ease;
 }
 
 
-    .envelope.open .carta-texto {
-        top: -10%;            
-    }
+.envelope.open .carta-texto {
+    top: -10%;                
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    .preview {
-        font-size: 17px;
-        line-height: 1.4;
-        padding: 10px;
-    }
 
-    .editarea {
+.env-body {
+        height: 250px;       
+    }
+    
+.editarea {
         font-size: 17px;
         padding: 10px;
         line-height: 1.4;
