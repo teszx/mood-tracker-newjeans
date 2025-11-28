@@ -185,5 +185,5 @@ function tocarMusica(humor) {
 }
 
 function Carta(){
-         window.location.href ='sdd.html';
-    }
+    window.open('sdd.html', '_self');
+}
