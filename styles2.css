@@ -126,16 +126,18 @@ body {
         overflow-x: hidden;
     }
 
-    .envelope {
-        width: 95vw;
-        max-width: 420px;
-        height: 360px;
+   .envelope {
+    width: 95vw;
+    max-width: 420px;
+    height: 350px;
 
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        position: relative;
-    }
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
 
    
    .carta-texto {
