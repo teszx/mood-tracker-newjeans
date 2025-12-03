@@ -9,27 +9,23 @@ html,
 body {
     height: 100%;
 }
+
 body {
     margin: 0;
     background: var(--bg);
     font-family: "Crimson Pro", Georgia, serif;
     -webkit-font-smoothing: antialiased;
-    padding: 18px;
-}
-
-h1 {
-    margin: 0 0 16px 0;
-    font-size: 28px;
-    color: #300;
-    text-align: left;
+    padding: 20px; 
 }
 
 .wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 22px;   
     align-items: flex-start;
 }
+
+
 
 .envelope {
     width: calc(46vw);
@@ -44,7 +40,7 @@ h1 {
 
 .env-body {
     width: 100%;
-    height: 220px;
+    height: 240px; 
     background: var(--env);
     border-radius: 12px;
     position: relative;
@@ -52,6 +48,8 @@ h1 {
     border: 2px solid var(--border);
     box-sizing: border-box;
 }
+
+
 
 .env-flap {
     position: absolute;
@@ -67,12 +65,14 @@ h1 {
     box-shadow: 0 6px 0 rgba(0, 0, 0, 0.02) inset;
 }
 
+
+
 .carta-texto {
-    width: 85%;
-    height: 75%;
+    width: 88%; 
+    height: 78%;
     background: white;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 18px 14px; 
     position: absolute;
     top: 120%;
     left: 50%;
@@ -80,7 +80,13 @@ h1 {
     overflow-y: auto;
     z-index: 5;
     transition: 0.6s ease;
+    line-height: 1.55;  
 }
+
+.carta-texto p {
+    margin-bottom: 14px; 
+}
+
 
 .editarea {
     display: none;
@@ -95,12 +101,15 @@ h1 {
     background: transparent;
 }
 
+
+
 .envelope.open .env-flap {
     transform: rotateX(180deg);
 }
 
 .envelope.open .carta-texto {
-    top: 10%;
+    top: 8%;   
+    height: 88%; 
     z-index: 20;
 }
 
@@ -108,83 +117,49 @@ h1 {
     display: block;
 }
 
-.envelope:focus {
-    outline: 3px solid rgba(0, 0, 0, 0.06);
-}
 
 
 @media screen and (max-width: 430px) {
 
-    
     body {
-        margin: 0;
         padding: 0;
-        min-height: 100svh; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
         overflow-x: hidden;
     }
 
-    h1 {
-        font-size: 22px;
-        text-align: center;
-        margin-top: 10px;
+    .envelope {
+        width: 95vw;
+        max-width: 420px;
+        height: 360px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
     }
 
-.envelope {
-    width: 95vw;          
-    max-width: 420px;     
-    height: 350px;
-    
-    position: relative;
-    overflow: hidden;
-    clip-path: inset(0 0 0 0);
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-
-    display: flex;               
-    justify-content: center;     
-    align-items: flex-end;       
-}
-
-
-
-.carta-texto {
+   
     .carta-texto {
-    position: absolute;
-    bottom: -100%;             
-    left: 0;
-    width: 100%;
-    height: 100%;                 
-    padding: 20px;
-    box-sizing: border-box;
-
-    overflow-y: auto;            
-    overscroll-behavior: contain;
-
-    transition: bottom .6s ease;
-}
-
-}
-
-
-.envelope.open .carta-texto {
-    bottom: 0;
-    top: -10%;                
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-.env-body {
-        height: 250px;       
+        position: absolute;
+        bottom: -105%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        transition: bottom .6s ease;
     }
-    
-.editarea {
+
+    .envelope.open .carta-texto {
+        bottom: 0;
+    }
+
+    .env-body {
+        height: 260px;
+    }
+
+    .editarea {
         font-size: 17px;
         padding: 10px;
-        line-height: 1.4;
     }
 }
-
